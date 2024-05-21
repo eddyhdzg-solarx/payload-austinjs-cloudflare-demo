@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getPage, getPages } from "@/server";
-import { RichText } from "@/components";
+import { PageTemplate } from "./page.client";
 
 export const revalidate = 10;
 
@@ -27,9 +27,5 @@ export default async function Page({ params: { slug = "index" } }: PageParams) {
     return notFound();
   }
 
-  return (
-    <main>
-      <RichText content={page?.content} />
-    </main>
-  );
+  return <PageTemplate page={page} />;
 }
