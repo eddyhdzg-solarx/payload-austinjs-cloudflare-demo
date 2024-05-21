@@ -1,11 +1,14 @@
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { BlocksFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
 import path from "path";
 import { buildConfig } from "payload/config";
 import { fileURLToPath } from "url";
 import { s3Storage } from "@payloadcms/storage-s3";
-import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
+import { Pages } from "./collections/Pages/Pages";
+import { Users } from "./collections/Users";
+import { alertBlock } from "./blocks/alertBlock";
+import { buttonsBlock } from "./blocks/buttonsBlock";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -14,8 +17,13 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Media, Users],
-  editor: lexicalEditor({}),
+  collections: [Media, Pages, Users],
+  editor: lexicalEditor({
+    features: ({ defaultFeatures }) => [
+      ...defaultFeatures,
+      BlocksFeature({ blocks: [alertBlock, buttonsBlock] }),
+    ],
+  }),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
     outputFile: path.resolve(dirname, "payload-types.ts"),
