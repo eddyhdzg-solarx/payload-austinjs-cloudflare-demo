@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { getPage, getPages } from "@/server";
 import { PageTemplate } from "./page.client";
 
-export const revalidate = 10;
+export const revalidate = 1;
 
 interface PageParams {
   params: { slug: string };
