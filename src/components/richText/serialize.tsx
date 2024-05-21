@@ -239,24 +239,14 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
 
             if (value) {
               return (
-                <>
-                  <Image
-                    key={value.id}
-                    className="rounded-md"
-                    alt={value.alt || "upload"}
-                    width={value.width}
-                    height={value.height}
-                    src={value.url}
-                  />
-                  <img
-                    src={value.url}
-                    alt={value.alt || "upload"}
-                    style={{
-                      width: value.width,
-                      height: value.height,
-                    }}
-                  />
-                </>
+                <img
+                  src={value.url}
+                  alt={value.alt || "upload"}
+                  style={{
+                    width: value.width,
+                    height: value.height,
+                  }}
+                />
               );
             }
           }
