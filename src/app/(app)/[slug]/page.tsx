@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { getPage, getPages } from "@/server";
-// import { PageTemplate } from "./page.client";
 import { RichText } from "@/components";
+
+export const revalidate = 10;
 
 interface PageParams {
   params: { slug: string };
