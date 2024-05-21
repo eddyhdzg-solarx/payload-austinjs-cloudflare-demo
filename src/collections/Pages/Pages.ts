@@ -1,5 +1,6 @@
 import type { CollectionConfig } from "payload/types";
 import formatSlug from "./hooks/formatSlug";
+import { PUBLIC_SITE_URL } from "@/consts";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
@@ -8,9 +9,7 @@ export const Pages: CollectionConfig = {
     defaultColumns: ["title", "slug", "updatedAt"],
     livePreview: {
       url: ({ data }) =>
-        `${process.env.PAYLOAD_PUBLIC_SITE_URL}${
-          data.slug !== "index" ? `/${data.slug}` : ""
-        }`,
+        `${PUBLIC_SITE_URL}${data.slug !== "index" ? `/${data.slug}` : ""}`,
     },
   },
   access: {
