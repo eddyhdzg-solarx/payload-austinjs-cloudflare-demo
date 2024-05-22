@@ -5,7 +5,8 @@
 //     ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
 //     : "http://localhost:3000";
 
-export const PUBLIC_SERVER_URL = process.env.VERCEL_ENV;
+export const PUBLIC_SERVER_URL =
+  process.env.NEXT_PUBLIC_VERCEL_URL ?? process.env.VERCEL_URL;
 
 // if (process.env.VERCEL_ENV === "production") {
 //   domain = process.env.VERCEL_URL;
