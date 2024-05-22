@@ -239,13 +239,11 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
 
             if (value) {
               return (
-                <img
+                <Image
                   src={value.url}
+                  width={value.width}
+                  height={value.height}
                   alt={value.alt || "upload"}
-                  style={{
-                    width: value.width,
-                    height: value.height,
-                  }}
                 />
               );
             }

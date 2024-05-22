@@ -12,11 +12,11 @@
   "dependencies": {
     "@lexical/list": "^0.15.0",
     "@lexical/rich-text": "^0.15.0",
-    "@payloadcms/db-mongodb": "3.0.0-beta.34",
+    "@payloadcms/db-mongodb": "3.0.0-beta.35",
     "@payloadcms/live-preview-react": "^0.2.0",
-    "@payloadcms/next": "3.0.0-beta.34",
-    "@payloadcms/richtext-lexical": "3.0.0-beta.34",
-    "@payloadcms/storage-s3": "3.0.0-beta.34",
+    "@payloadcms/next": "3.0.0-beta.35",
+    "@payloadcms/richtext-lexical": "3.0.0-beta.35",
+    "@payloadcms/storage-s3": "3.0.0-beta.35",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
@@ -26,7 +26,7 @@
     "lexical": "^0.15.0",
     "lucide-react": "^0.379.0",
     "next": "14.2.3",
-    "payload": "3.0.0-beta.34",
+    "payload": "3.0.0-beta.35",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.3.0",
@@ -40,7 +40,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5"
   }
 }
