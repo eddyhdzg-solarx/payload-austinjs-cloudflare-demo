@@ -10,16 +10,17 @@ export const PageTemplate: React.FC<{ page: Page | null | undefined }> = ({
 }) => {
   const { data } = useLivePreview({
     serverURL: PUBLIC_SERVER_URL,
-    depth: 30,
     initialData: page,
   });
 
   return (
     <main>
-      <div>env: {PUBLIC_SERVER_URL}</div>
       <div>NODE_ENV: {process.env.NODE_ENV}</div>
+      <div>VERCEL_ENV: {process.env.VERCEL_ENV}</div>
+      <div>NEXT_PUBLIC_VERCEL_ENV: {process.env.NEXT_PUBLIC_VERCEL_ENV}</div>
       <div>VERCEL_URL: {process.env.VERCEL_URL}</div>
-      <div>NEXT_PUBLIC_SERVER_URL: {process.env.NEXT_PUBLIC_SERVER_URL}</div>
+      <div>NEXT_PUBLIC_VERCEL_URL: {process.env.NEXT_PUBLIC_VERCEL_URL}</div>
+      <div>PUBLIC_SERVER_URL: {PUBLIC_SERVER_URL}</div>
       <RichText content={data?.content} />
     </main>
   );

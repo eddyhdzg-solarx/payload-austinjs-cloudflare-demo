@@ -1,6 +1,5 @@
 import type { CollectionConfig } from "payload/types";
 import formatSlug from "./hooks/formatSlug";
-// import { PUBLIC_SERVER_URL } from "@/consts";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
