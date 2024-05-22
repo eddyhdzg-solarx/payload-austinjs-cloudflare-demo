@@ -16,7 +16,10 @@ export const PageTemplate: React.FC<{ page: Page | null | undefined }> = ({
 
   return (
     <main>
-      env: {PUBLIC_SERVER_URL}
+      <div>env: {PUBLIC_SERVER_URL}</div>
+      <div>NODE_ENV: {process.env.NODE_ENV}</div>
+      <div>VERCEL_URL: {process.env.VERCEL_URL}</div>
+      <div>NEXT_PUBLIC_SERVER_URL: {process.env.NEXT_PUBLIC_SERVER_URL}</div>
       <RichText content={data?.content} />
     </main>
   );
