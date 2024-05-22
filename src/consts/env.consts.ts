@@ -5,7 +5,12 @@
 //     ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
 //     : "http://localhost:3000";
 
-export const PUBLIC_SERVER_URL =
-  typeof window !== "undefined"
-    ? window.location.origin
-    : "http://localhost:3000";
+export const PUBLIC_SERVER_URL = process.env.VERCEL_ENV;
+
+// if (process.env.VERCEL_ENV === "production") {
+//   domain = process.env.VERCEL_URL;
+// } else if (process.env.VERCEL_ENV === "preview") {
+//   domain = process.env.VERCEL_URL;
+// } else {
+//   domain = `http://localhost:${process.env.PORT || 3000}`;
+// }
