@@ -9,7 +9,7 @@ export const PageTemplate: React.FC<{ page: Page | null | undefined }> = ({
   page,
 }) => {
   const { data } = useLivePreview({
-    serverURL: PUBLIC_SERVER_URL,
+    serverURL: PUBLIC_SERVER_URL || "",
     initialData: page,
   });
 
