@@ -9,6 +9,7 @@ import { Pages } from "./collections/Pages/Pages";
 import { Users } from "./collections/Users";
 import { alertBlock } from "./blocks/alertBlock";
 import { buttonsBlock } from "./blocks/buttonsBlock";
+import { PUBLIC_SERVER_URL } from "./consts";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -16,6 +17,10 @@ const dirname = path.dirname(filename);
 export default buildConfig({
   admin: {
     user: Users.slug,
+    livePreview: {
+      collections: ["pages"],
+      url: ({ data }) => `${PUBLIC_SERVER_URL}/${data.slug}`,
+    },
   },
   collections: [Media, Pages, Users],
   editor: lexicalEditor({

@@ -8,7 +8,7 @@ export const getPage = async (slug: string) => {
 
   const data = await payload.find({
     collection: "pages",
-    currentDepth: 2,
+    // currentDepth: 30,
     where: {
       slug: {
         equals: slug,
